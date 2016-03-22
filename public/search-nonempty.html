@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="format-detection" content="telephone=no">
+<title>Search Page</title>
+
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+<link href="css/ion.rangeSlider.css" rel="stylesheet" type="text/css">
+<link href="css/ion.rangeSlider.skinHTML5.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/vendors/modernizr.js"></script>
+
+</head>
+<body class="search-body">
+<header class="navbar-fixed-top">
+	<nav class="navbar top-nav" role="navigation">             
+	  <div class="navbar-header">
+  		<a class="logo" href="#0"><img class="img-responsive" src="images/public/logo-rentance.png" alt=""></a>
+    	<div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"></div>
+    	<div class="search-collapse visible-xs collapsed" data-toggle="collapse" data-target="#search-filters"><i class="icon-search"></i></div> 
+	  </div>
+	  <div class="collapse navbar-collapse" id="navbar-collapse">
+	  	<ul class="header-menu">
+	    	<li><a href="#0">List Your Space</a></li>
+	      <li><a href="#">Sign in</a></li>
+	      <li><a href="#">Register</a></li>    
+	    </ul>                  
+	  </div><!--navbar-collape-->              
+	</nav><!--navbar-->
+</header>
+
+<section class="map hidden-xs">
+	<div id="map-canvas"></div>
+</section>
+
+<section class="sliding-panel">
+	<div class="sliding-panel-inner">
+		<div class="search-filters clearfix" id="search-filters">
+			<div class="search-filter-inner">
+				<div class="search-plus collapsed hidden-xs" data-toggle="collapse" data-target="#filters" aria-expanded="false" aria-controls="filters"></div>
+				<div class="search-input">
+					<input class="input" type="text" placeholder="City, State or Zip..">
+					<span class="icon-search search-icon"></span>
+				</div><!--search-input-->
+				<div class="filters-wrapper collapse collapsed clearfix" id="filters">
+					<div class="search-dropdowns-wrapper clearfix">
+						<div class="search-dropdown small">
+							<select name="rooms" id="rooms" class="selectpicker" data-style="input" title="Rooms">
+								<option value="item-1">Item 1</option>
+								<option value="item-2">Item 2</option>
+								<option value="item-3">Item 3</option>
+								<option value="item-4">Item 4</option>
+							</select>
+						</div><!--search-dropdown-->
+						<div class="search-dropdown small">
+							<select name="baths" id="baths" class="selectpicker" data-style="input" title="Baths">
+								<option value="item-1">Item 1</option>
+								<option value="item-2">Item 2</option>
+								<option value="item-3">Item 3</option>
+								<option value="item-4">Item 4</option>
+							</select>
+						</div><!--search-dropdown-->
+						<div class="search-dropdown big">
+							<select name="amenities" id="amenities" class="selectpicker" data-style="input" title="Amenities">
+								<option value="item-1">Item 1</option>
+								<option value="item-2">Item 2</option>
+								<option value="item-3">Item 3</option>
+								<option value="item-4">Item 4</option>
+							</select>
+						</div><!--search-dropdown-->
+						<div class="search-dropdown big">
+							<select name="property" id="property" class="selectpicker" data-style="input" title="Property Type">
+								<option value="item-1">Item 1</option>
+								<option value="item-2">Item 2</option>
+								<option value="item-3">Item 3</option>
+								<option value="item-4">Item 4</option>
+							</select>
+						</div><!--search-dropdown-->
+					</div><!--search-dropdowns-wrapper-->
+					<div class="range-wrapper clearfix">
+						<input type="text" id="range" name="range" value="" />
+					</div><!--range-wrapper-->
+					<a class="button filters" href="#0">Filters</a>
+				</div><!--filters-wrapper-->
+			</div><!--search-filter-inner-->
+		</div><!--search-filters-->
+		<div class="search-results">
+			<div class="search-result-top clearfix">
+				<h2 class="app-quantity">Search Results (1000+)</h2>
+				<div class="sort-container">Sort by:
+					<div class="search-dropdown sort"> 
+						<select name="sort" id="sort" class="selectpicker" data-style="input">
+							<option value="lowest">Lowest</option>
+							<option value="highest">Highest</option>
+							<option value="date">Date</option>
+						</select>
+					</div>
+				</div><!--sort-container-->
+			</div><!--search-results-top-->
+			
+			<div class="row">
+				<div class="col-xlg-4 col-md-6 col-sm-12">
+					<div class="app-block">
+						<div class="app-price">$0000 CAD</div>
+						<a class="man-icon" href="#0"><img src="images/elements/man-icon.png" alt=""></a>
+						<div class="app-star active"></div>
+						<ul class="slider">
+						  <li><img src="images/public/image-1.jpg"/></li>
+						  <li><img src="images/public/image-2.jpg"/></li>
+						  <li><img src="images/public/image-3.jpg"/></li>
+						</ul>
+						<div class="text-part">
+							<ul class="icons">
+								<li><img src="images/elements/bedroom.png" alt=""></li>
+								<li><img src="images/elements/studio.png" alt=""></li>
+								<li><img src="images/elements/den.png" alt=""></li>
+								<li><img src="images/elements/bath.png" alt=""></li>
+								<li><img src="images/elements/shared.png" alt=""></li>
+							</ul>
+							<h3><a href="#0">Bright Two Bedroom Loft</a></h3>
+							<div class="sub-text">Private Room - Toronto, ON</div>
+						</div><!--text-part-->
+					</div><!--app-block-->
+				</div><!--col-->
+
+				<div class="col-xlg-4 col-md-6 col-sm-12">
+					<div class="app-block">
+						<div class="app-price">$0000 CAD</div>
+						<a class="man-icon" href="#0"><img src="images/elements/man-icon.png" alt=""></a>
+						<div class="app-star active"></div>
+						<ul class="slider">
+						  <li><img src="images/public/image-2.jpg"/></li>
+						  <li><img src="images/public/image-1.jpg"/></li>
+						  <li><img src="images/public/image-3.jpg"/></li>
+						</ul>
+						<div class="text-part">
+							<ul class="icons">
+								<li><img src="images/elements/bedroom.png" alt=""></li>
+								<li><img src="images/elements/studio.png" alt=""></li>
+								<li><img src="images/elements/den.png" alt=""></li>
+								<li><img src="images/elements/bath.png" alt=""></li>
+								<li><img src="images/elements/shared.png" alt=""></li>
+							</ul>
+							<h3><a href="#0">Bright Two Bedroom Loft</a></h3>
+							<div class="sub-text">Private Room - Toronto, ON</div>
+						</div><!--text-part-->
+					</div><!--app-block-->
+				</div><!--col-->
+
+				<div class="col-xlg-4 col-md-6 col-sm-12">
+					<div class="app-block">
+						<div class="app-price">$0000 CAD</div>
+						<a class="man-icon" href="#0"><img src="images/elements/man-icon.png" alt=""></a>
+						<div class="app-star"></div>
+						<ul class="slider">
+						  <li><img src="images/public/image-3.jpg"/></li>
+						  <li><img src="images/public/image-1.jpg"/></li>
+						  <li><img src="images/public/image-2.jpg"/></li>
+						</ul>
+						<div class="text-part">
+							<ul class="icons">
+								<li><img src="images/elements/bedroom.png" alt=""></li>
+								<li><img src="images/elements/studio.png" alt=""></li>
+								<li><img src="images/elements/den.png" alt=""></li>
+								<li><img src="images/elements/bath.png" alt=""></li>
+								<li><img src="images/elements/shared.png" alt=""></li>
+							</ul>
+							<h3><a href="#0">Bright Two Bedroom Loft</a></h3>
+							<div class="sub-text">Private Room - Toronto, ON</div>
+						</div><!--text-part-->
+					</div><!--app-block-->
+				</div><!--col-->
+
+				<div class="col-xlg-4 col-md-6 col-sm-12">
+					<div class="app-block">
+						<div class="app-price">$0000 CAD</div>
+						<a class="man-icon" href="#0"><img src="images/elements/man-icon.png" alt=""></a>
+						<div class="app-star"></div>
+						<ul class="slider">
+						  <li><img src="images/public/image-1.jpg"/></li>
+						  <li><img src="images/public/image-2.jpg"/></li>
+						  <li><img src="images/public/image-3.jpg"/></li>
+						</ul>
+						<div class="text-part">
+							<ul class="icons">
+								<li><img src="images/elements/bedroom.png" alt=""></li>
+								<li><img src="images/elements/studio.png" alt=""></li>
+								<li><img src="images/elements/den.png" alt=""></li>
+								<li><img src="images/elements/bath.png" alt=""></li>
+								<li><img src="images/elements/shared.png" alt=""></li>
+							</ul>
+							<h3><a href="#0">Bright Two Bedroom Loft</a></h3>
+							<div class="sub-text">Private Room - Toronto, ON</div>
+						</div><!--text-part-->
+					</div><!--app-block-->
+				</div><!--col-->
+			</div><!--row-->
+		</div><!--search-results-->
+		<div class="paging">
+			<div class="page-quantity">1 — 23 of 1000+ Rentals</div>
+			<ul class="search-pagination">
+				<li class="disabled"><a href="#0">1</a></li>
+				<li><a href="#0">2</a></li>
+				<li><a href="#0">3</a></li>
+				<li class="empty">...</li>
+				<li><a href="#0">23</a></li>
+				<li><a href="#0"><span class="caret rotate"></span></a></li>
+			</ul>
+		</div><!--paging-->
+	</div><!--sliding-panel-inner-->
+	<button class="button toggle-slide hidden-xs"></button>
+</section>
+
+<footer class="navbar-fixed-bottom footer">
+	Copyright 2014 © Rentance · All rights reserved
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+
+<!--Gooogle Maps-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(24.8062146,46.8531877);
+    var mapOptions = {
+      zoom: 15,
+      center: myLatlng
+    }
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+  //google.maps.event.addDomListener(window, 'resize', initialize);
+</script>
+
+</body>
+</html>

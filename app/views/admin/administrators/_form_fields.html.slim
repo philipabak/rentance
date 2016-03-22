@@ -1,0 +1,13 @@
+fieldset
+  .form-group
+    = f.label :name, 'Username', class: 'col-md-3 control-label'
+    .col-md-9
+      = f.text_field :name, class: 'form-control', autofocus: true
+  .form-group
+    = f.label :password, (resource.new_record? ? 'Password' : 'New Password'), class: 'col-md-3 control-label'
+    .col-md-9
+      = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label :password_confirmation, 'Confirm Password', class: 'col-md-3 control-label'
+    .col-md-9
+      = f.password_field :password_confirmation, class: 'form-control'

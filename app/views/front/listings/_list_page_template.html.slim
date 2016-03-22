@@ -1,0 +1,32 @@
+script.js-template-page type='x-handlebars-template'
+  .row
+    | {{#listings}}
+    .list-item.col-xlg-4.col-md-6.col-sm-12
+      .app-block
+        .app-price $0000 CAD
+        a.man-icon href="#0"
+          img src=image_url('rentance-v1/elements/man-icon.png') alt=''
+        .app-star
+        / .app-star.active
+        ul.slider
+          | {{#photos}}
+          li
+            img src="{{this}}"
+          | {{/photos}}
+        .text-part
+          ul.icons
+            li
+              img src=image_url('rentance-v1/elements/bedroom.png') alt=''
+            li
+              img src=image_url('rentance-v1/elements/studio.png') alt=''
+            li
+              img src=image_url('rentance-v1/elements/den.png') alt=''
+            li
+              img src=image_url('rentance-v1/elements/bath.png') alt=''
+            li
+              img src=image_url('rentance-v1/elements/shared.png') alt=''
+          h3
+            a href="{{url}}" {{title}}
+          .sub-text
+            | {{description}}
+    | {{/listings}}

@@ -1,0 +1,24 @@
+$('#myModal').modal('hide');
+$('<%= escape_javascript(render('layouts/admin/flash_message')) %>').appendTo('#flash').hide().fadeIn();
+
+$('<%= escape_javascript(render 'collection_item') %>').appendTo('.<%= resource.class.name.demodulize.downcase %>-collection<%= resource.respond_to?(:collection_id) ? "#collection_#{resource.collection_id}" : '' %>').hide().fadeIn();
+
+selection = $('.<%= resource.class.name.demodulize.downcase %>-selection<%= resource.respond_to?(:collection_id) ? "#collection_#{resource.collection_id}" : '' %>');
+if (selection.length > 0) {
+    if (selection.hasClass('ui-selectize')) {
+        control = selection[0].selectize;
+        control.enable();
+        control.addOption({
+            value: <%= resource.id %>,
+            text: '<%= escape_javascript(resource.to_s).html_safe %>'
+        });
+        control.clear();
+        control.addItem(<%= resource.id %>);
+        control.refreshItems();
+    } else {
+        selection.prepend($('<option>', {
+            value: <%= resource.id %>,
+            text: '<%= escape_javascript(resource.to_s).html_safe %>'
+        })).val(<%= resource.id %>);
+    }
+}

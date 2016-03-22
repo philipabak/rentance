@@ -1,0 +1,75 @@
+- page_title = resource.resource_name
+= admin_page_title page_title
+
+#content-header
+  h1 = controller_name.titlecase
+#content-container
+  .portlet
+    .portlet-header
+      h3
+        i class="fa #{resource.class.icon}"
+        = page_title
+      ul.portlet-tools.pull-right
+        li = admin_button :edit, edit_admin_listing_url(resource.id), {}, :small
+    .portlet-content
+      .row
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              h3.panel-title Description
+            .panel-body
+              p
+                b Title:
+                br
+                = resource.title
+              p
+                b Description:
+                br
+                = resource.description
+              p
+                b Slug:
+                br
+                span#slug> = resource.slug
+                = link_to 'Reset slug', reset_slug_admin_listing_url(resource.id), remote: true, class: 'small'
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              h3.panel-title Publisher
+            .panel-body
+              p
+                b Publisher:
+                br
+                = link_to resource.publisher.name, admin_publisher_url(resource.publisher.id)
+              p
+                b Date:
+                br
+                = resource.published_at
+
+      .row
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              h3.panel-title Address
+            .panel-body
+              = render 'admin/address/show'
+
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              h3.panel-title Geolocation
+            .panel-body
+              = render 'admin/geolocation/show'
+
+      .row
+        .col-md-12
+          .portlet.portlet-plain
+            .portlet-header
+              h3
+                i class="fa #{ListingPhoto.icon}"
+                | Photos
+            .portlet-content
+              ul.listingphoto-collection id="collection_#{resource.id}" data-sort-url=sort_admin_listing_photos_url(listing_id: resource.id)
+                = render partial: 'admin/listing_photos/collection_item', collection: resource.photos, as: 'resource'
+
+              .clear
+              = render 'admin/listing_photos/form'

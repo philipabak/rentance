@@ -1,0 +1,8 @@
+tr data-resource-id=resource.id
+  td = link_to resource.title, admin_listing_url(resource.id)
+  td = resource.address.try(:city)
+  td
+    span.label.label-success Active
+  td.hidden-xs.hidden-sm
+    => admin_button :edit, edit_admin_listing_url(resource.id), remote: true
+    = admin_button :delete, delete_admin_listing_url(resource.id), remote: true

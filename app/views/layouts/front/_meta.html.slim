@@ -1,0 +1,8 @@
+title = content_for?(:title) ? content_for(:title) : 'Rentance'
+meta name='description' content=(content_for?(:description) ? yield(:description) : "Listings in USA and Canada: rent a house or a flat.")
+meta name='keywords' content=(content_for?(:keywords) ? yield(:keywords) : 'rent a flat in Canada, rent a house in the USA, rent search')
+meta property='og:type' content='website'
+meta property='og:title' content='Rentance'
+meta property='og:description' content='Listings in USA and Canada: rent a house or a flat.'
+meta property='og:url' content=root_url
+meta property='og:site_name' content='Rentance'

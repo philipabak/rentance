@@ -1,0 +1,13 @@
+doctype html
+html.no-js
+  head
+    title = content_for?(:title) ? content_for(:title) : 'Rentance Admin panel'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+    = render 'layouts/favicon'
+    = stylesheet_link_tag 'admin/application', media: 'all'
+    = render 'layouts/ga_tracker'
+    = javascript_include_tag 'admin/application'
+    = csrf_meta_tags
+  body#login-page
+    #login-container
+      = yield

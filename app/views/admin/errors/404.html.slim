@@ -1,0 +1,17 @@
+- page_title = 'Page not found'
+= admin_page_title page_title
+
+#content-header
+  h1 = page_title
+#content-container
+  .error-container
+    .error-code 404
+    .error-details
+      h4 Oops&hellip; You're lost.
+      p We can not find the page you're looking for. Is there a typo in the url? Or try the search bar below:
+      form.form action='./'
+        .input-group
+          input.form-control placeholder='Search...' type='text'
+          span.input-group-btn
+            button.btn.btn-primary type='button'
+              i.fa.fa-search

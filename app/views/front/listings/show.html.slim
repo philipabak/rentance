@@ -1,0 +1,78 @@
+section.content.details-page
+  .container
+    a.back-to href="#0"
+      i.icon-left-small
+      span.hidden-xs Back to Search Results
+    h1 The Manor City Place Doral
+    .details-member
+      b Kate Smith.
+      | Toronto, Ontario, Canada. Member since October 2014.
+  .details-slider-out
+    .details-slider-wrapper
+      ul.details-slider
+        - @resource.photos.each_with_index do |p, i|
+          li
+            picture
+              /![if IE 9]><video style="display: none;"><![endif]
+              source media="(min-width: 800px)" srcset=p.photo.url(:medium)
+              /![if IE 9]></video><![endif]
+              img.img-responsive alt="" src=p.photo.url(:small) srcset=p.photo.url(:small)
+            .details-slider-desc.hidden-xs #{i+1} of #{@resource.photos.count}: Photo description
+      a.details-video-link data-target="#videoModal" data-thevideo="https://www.youtube.com/embed/FkCnDeaM4P8" data-toggle="modal" href="#0"
+        img src=image_url('rentance-v1/elements/youtube-icon.png') alt=""
+        | Watch Video 1:32
+  .details-tabs
+    .container
+      ul.nav.nav-tabs role="tablist"
+        li.active
+          a aria-controls="description" data-toggle="tab" href="#description" role="tab"  Description
+        li
+          a aria-controls="demographics" data-toggle="tab" href="#demographics" role="tab"  Demographics
+        li
+          a aria-controls="nearby" data-toggle="tab" href="#nearby" role="tab"  Nearby
+  .details-tab-content
+    .container
+      .row
+        .col-md-8.col-sm-7.col-xs-12
+          .tab-content
+            = render 'tab_description'
+            = render 'tab_demographics'
+            = render 'tab_nearby'
+          h4 Walk Score®
+          .walkscore-block
+            div
+              | Walk Score®
+              span Somewhat Walkable
+            .walkscore-number
+              | 62
+        aside.col-md-4.col-sm-5.col-xs-12
+          #details-sidebar.details-sidebar-block
+            .ds-name The Manor City Place Doral
+            .ds-text
+              .ds-price $2,500 CAD
+              .ds-address
+                | 3450 NW 85th Court
+                br
+                | Toronto, ON, 33122.
+            .ds-buttons
+              a.button.green.big-b href="#0"  Contact us
+              a.button.details-wishlist href="#0"
+              a.button.hidden-xs href="#0"  Point of Interest
+            .ds-social.clearfix.hidden-xs
+              .ds-social-item
+                .fb-share-button data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"
+              .ds-social-item
+                script src="//platform.linkedin.com/in.js" type="text/javascript"  lang: en_US
+                script data-counter="right" type="IN/Share"
+              .ds-social-item
+                a.twitter-share-button href="https://twitter.com/share"  Tweet
+
+section.details-map
+  #map-canvas data={lat: @resource.geolocation.latitude, lng: @resource.geolocation.longitude}
+#videoModal.modal.fade.video-modal aria-hidden="true" aria-labelledby="videoModal" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-body
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  &times;
+        .embed-responsive.embed-responsive-16by9
+          iframe allowfullscreen="" frameborder="0" src=""

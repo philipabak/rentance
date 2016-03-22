@@ -1,0 +1,10 @@
+script.js-template-head type='x-handlebars-template'
+  .search-result-top.clearfix
+    h2.app-quantity Search Results ({{total_count}})
+    .sort-container
+      | Sort by:
+      .search-dropdown.sort
+        select#sort.selectpicker data-style="input" name="sort"
+          option value="lowest"  Lowest
+          option value="highest"  Highest
+          option value="date"  Date

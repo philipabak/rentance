@@ -1,0 +1,62 @@
+doctype html
+html
+  head
+    title Coming soon | RENTANCE - Connecting Owners and Renters faster
+    meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"
+    = render 'layouts/favicon'
+    = stylesheet_link_tag 'soon/application', media: 'all'
+    = javascript_include_tag 'soon/application'
+    /[if lt IE 9]
+      script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+      script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"
+  body.tooltips
+    .wrapper
+      #countdown
+        .container
+          h1.logo
+            img alt="Rentance Logo | Connecting Renters and owners" src=image_url('soon/logo.png')
+            | RENTANCE
+          h1
+            span.notif YOU WILL BE WOOWED !!!!!
+          .divider
+          p
+            | RENTANCE CONNECTING OWNERS and RENTERS FASTER THAN EVER BEFORE
+          h1
+            span.days> 00
+            span.timeRefDays> days
+            span.hours> 00
+            span.timeRefHours> hours
+            span.minutes> 00
+            span.timeRefMinutes> minutes
+            span.seconds> 00
+            span.timeRefSeconds> seconds
+          p FOLLOW US
+          .clear
+          .social-icons
+            a data-toggle="tooltip" href="https://www.facebook.com/rentance" title="Facebook"
+              img alt="Facebook icon" src=image_url('teplok-comingsoon/social-icons/facebook.png')
+            a data-toggle="tooltip" href="#fakelink" title="Github"
+              img alt="Github icon" src=image_url('teplok-comingsoon/social-icons/github.png')
+            a data-toggle="tooltip" href="#fakelink" title="Google+"
+              img alt="Gplus icon" src=image_url('teplok-comingsoon/social-icons/gplus.png')
+            a data-toggle="tooltip" href="#fakelink" title=("Linked In")
+              img alt="Linkedin icon" src=image_url('teplok-comingsoon/social-icons/linkedin.png')
+            a data-toggle="tooltip" href="#fakelink" title="Tumblr"
+              img alt="Tumblr icon" src=image_url('teplok-comingsoon/social-icons/tumblr.png')
+            a data-toggle="tooltip" href="#fakelink" title="Twitter"
+              img alt="Twitter icon" src=image_url('teplok-comingsoon/social-icons/twitter.png')
+            a data-toggle="tooltip" href="#fakelink" title="Vimeo"
+              img alt="Vimeo icon" src=image_url('teplok-comingsoon/social-icons/vimeo.png')
+            a data-toggle="tooltip" href="#fakelink" title="Youtube"
+              img alt="Youtube icon" src=image_url('teplok-comingsoon/social-icons/youtube.png')
+    javascript:
+      $.backstretch([
+        '#{image_url('soon/image001.jpg')}',
+        '#{image_url('soon/image002.jpg')}',
+        '#{image_url('soon/image003.jpg')}',
+        '#{image_url('soon/image004.jpg')}',
+        '#{image_url('soon/image005.jpg')}'
+      ], {
+        fade: 750,
+        duration: 6000
+      });

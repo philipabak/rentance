@@ -1,0 +1,39 @@
+ruby:
+  search_page = (controller_name == 'listings' && action_name == 'search')
+
+#search-filters class="search-filters clearfix #{search_page ? '' : 'collapse'}"
+  div class="search-filter-inner #{search_page ? '' : 'dp-inner'}"
+    - if search_page
+      .search-plus.collapsed.hidden-xs aria-controls="filters" aria-expanded="false" data-target="#filters" data-toggle="collapse"
+    .search-input
+      input#autocomplete.input placeholder="City, State or Zip..." type="text"
+      span.icon-search.search-icon
+    #filters class="filters-wrapper clearfix #{search_page ? 'collapse collapsed' : ''}"
+      .search-dropdowns-wrapper.clearfix
+        .search-dropdown.small
+          select#rooms.selectpicker data-style="input" name="rooms" title="Rooms"
+            option value="item-1"  Item 1
+            option value="item-2"  Item 2
+            option value="item-3"  Item 3
+            option value="item-4"  Item 4
+        .search-dropdown.small
+          select#baths.selectpicker data-style="input" name="baths" title="Baths"
+            option value="item-1"  Item 1
+            option value="item-2"  Item 2
+            option value="item-3"  Item 3
+            option value="item-4"  Item 4
+        .search-dropdown.big
+          select#amenities.selectpicker data-style="input" name="amenities" title="Amenities"
+            option value="item-1"  Item 1
+            option value="item-2"  Item 2
+            option value="item-3"  Item 3
+            option value="item-4"  Item 4
+        .search-dropdown.big
+          select#property.selectpicker data-style="input" name="property" title="Property Type"
+            option value="item-1"  Item 1
+            option value="item-2"  Item 2
+            option value="item-3"  Item 3
+            option value="item-4"  Item 4
+      .range-wrapper.clearfix
+        input#range name="range" type="text" value=""
+      a.button.filters href="#0"  Filters

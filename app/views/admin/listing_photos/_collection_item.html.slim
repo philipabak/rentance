@@ -1,0 +1,5 @@
+li id="photo_#{resource.id}" data-resource-id=resource.id
+  a.thumbnail data-gallery='' href=resource.photo.url(:medium)
+    img src=resource.photo.url(:thumb) alt="Photo ##{resource.id}"
+  p
+    = admin_button :delete, admin_listing_photo_url(id: resource.id, listing_id: resource.listing_id), {remote: true, method: 'delete'}, :extra_small

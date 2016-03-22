@@ -1,0 +1,59 @@
+#listing-list {
+  .list-item {
+    &:nth-child(n) {
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-duration: 0.5s;
+      animation-name: fadein;
+      animation-delay: 0.7s;
+    }
+    &:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.15s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.25s;
+    }
+    &:nth-child(6) {
+      animation-delay: 0.3s;
+    }
+    &:nth-child(7) {
+      animation-delay: 0.35s;
+    }
+    &:nth-child(8) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(9) {
+      animation-delay: 0.45s;
+    }
+    &:nth-child(10) {
+      animation-delay: 0.5s;
+    }
+    &:nth-child(11) {
+      animation-delay: 0.55s;
+    }
+    &:nth-child(12) {
+      animation-delay: 0.6s;
+    }
+    &:nth-child(13) {
+      animation-delay: 0.65s;
+    }
+  }
+
+  .loading-spinner {
+    margin: 23px auto;
+    height: 32px;
+    width: 32px;
+    overflow: hidden;
+    background-image: asset-data-url('front/loading-spinner.gif');
+    opacity: 0.7;
+  }
+}

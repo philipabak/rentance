@@ -1,0 +1,40 @@
+ruby:
+  method = resource.new_record? ? 'post' : (action_name == 'delete' ? 'delete' : 'patch')
+  case method
+    when 'post'
+      url = {controller: controller_name, action: 'index'}
+      button = 'Create'
+    when 'delete'
+      url = {controller: controller_name, action: 'destroy', id: resource.id}
+      button = 'Confirm'
+    else
+      url = {controller: controller_name, action: 'update', id: resource.id}
+      button = 'Save changes'
+  end
+
+#content-header
+  h1 = controller_name.titlecase
+#content-container
+  = render 'error_messages'
+  .portlet
+    .portlet-header
+      h3
+        i.fa.fa-edit
+        = page_title
+      - unless resource.new_record?
+        ul.portlet-tools.pull-right
+          li = admin_button :show, url_for(controller: controller_name, action: :show, id: resource.id), {}, :small
+    .portlet-content
+      = form_for resource, url: url, method: method, html: {class: "form-horizontal #{resource.class.name.demodulize.downcase}-form", role: 'form'} do |f|
+        - if method == 'delete'
+          = render 'delete_fields', f: f
+        - else
+          = render 'form_fields', f: f
+        fieldset
+          .form-group.form-actions
+            .col-md-offset-3.col-md-9
+              = f.button button, name: nil, type: 'submit', class: "btn #{method == 'delete' ? 'btn-danger' : 'btn-primary'}"
+              - if resource.new_record?
+                = link_to 'Cancel', url_for(controller: controller_name), class: 'btn btn-default', role: 'button'
+              - else
+                = link_to 'Cancel', url_for(controller: controller_name, action: :show, id: resource.id), class: 'btn btn-default', role: 'button'

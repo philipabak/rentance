@@ -1,0 +1,15 @@
+- page_title = controller_name.titlecase
+= admin_page_title page_title
+
+#content-header
+  h1 = page_title
+#content-container
+  table.table.table-striped.table-bordered.table-hover data-provide='datatable'
+    thead
+      = render 'collection_header'
+    tbody.administrator-collection
+      = render partial: 'collection_item', collection: collection, as: 'resource'
+
+  == paginate collection, theme: 'admin'
+  br
+  = link_to 'Add new administrator', new_admin_administrator_url, remote: true, class: 'btn btn-primary'

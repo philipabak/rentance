@@ -1,0 +1,31 @@
+- page_title = controller_name.titlecase
+= admin_page_title page_title
+
+#content-header
+  h1 = page_title
+#content-container
+  .row
+    .col-md-3.col-sm-6
+      a.dashboard-stat.primary href=admin_listings_url
+        .visual
+          i class="fa #{Listing.icon}"
+        .details
+          span.content Listings
+          span.value = number_with_delimiter(Listing.count)
+        i.fa.fa-play-circle.more
+    .col-md-3.col-sm-6
+      a.dashboard-stat.secondary href=admin_publishers_url
+        .visual
+          i class="fa #{Publisher.icon}"
+        .details
+          span.content Publishers
+          span.value = number_with_delimiter(Publisher.count)
+        i.fa.fa-play-circle.more
+    .col-md-3.col-sm-6
+      a.dashboard-stat.tertiary href=admin_administrators_url
+        .visual
+          i class="fa #{Administrator.icon}"
+        .details
+          span.content Administrators
+          span.value = number_with_delimiter(Administrator.count)
+        i.fa.fa-play-circle.more

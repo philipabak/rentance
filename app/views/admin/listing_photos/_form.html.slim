@@ -1,0 +1,7 @@
+= form_for resource.photos.new, url: admin_listing_photos_url(listing_id: resource.id) do |f|
+  span.btn.btn-primary.fileinput-button
+    span Add photos...
+    = f.file_field :photo, multiple: true, name: 'listing_photo[photo]'
+
+script#template-upload type='text/x-tmpl'
+  | <li><div class="thumbnail"><div class="uploading"></div></div></li>

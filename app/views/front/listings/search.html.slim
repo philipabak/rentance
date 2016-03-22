@@ -1,0 +1,12 @@
+- geoip = MAXMIND_DB.lookup(request.remote_ip)
+section.map.hidden-xs
+  #map-canvas data={url: geomarkers_url(format: :json), lat: geoip.location.latitude, lng: geoip.location.longitude}
+  #geolocation
+section.sliding-panel
+  .sliding-panel-inner
+    = render 'layouts/front/filters'
+    .search-results#listing-list data={url: listings_url(format: :json)}
+    = render 'list_head_template'
+    = render 'list_page_template'
+    = render 'list_empty_template'
+  button.button.toggle-slide.hidden-xs

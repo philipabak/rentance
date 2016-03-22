@@ -1,0 +1,7 @@
+tr data-resource-id=resource.id
+  td = link_to resource.name, admin_publisher_url(resource.id)
+  td
+    span.label.label-success Active
+  td.hidden-xs.hidden-sm
+    => admin_button :edit, edit_admin_publisher_url(resource.id), remote: true
+    = admin_button :delete, delete_admin_publisher_url(resource.id), remote: true

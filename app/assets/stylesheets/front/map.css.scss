@@ -1,0 +1,109 @@
+#map-canvas {
+  .map-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    line-height: 200px;
+    background-color: #5ecb66;
+    font-weight: 700;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+
+    &.zero {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 0;
+      z-index: 4;
+    }
+    &.tiny {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 16px;
+      z-index: 5;
+    }
+    &.small {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      z-index: 6;
+    }
+    &.medium {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 18px;
+      z-index: 7;
+    }
+    &.large {
+      width: 75px;
+      height: 75px;
+      line-height: 75px;
+      font-size: 22px;
+      z-index: 8;
+    }
+    &.active {
+      background-color: #de571b;
+      z-index: 9;
+    }
+  }
+}
+
+@media screen and (max-device-width: 568px) and (orientation: landscape) {
+  #map-canvas {
+    .map-circle {
+      &.zero {
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        font-size: 0;
+      }
+      &.tiny {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 12px;
+      }
+      &.small {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+      }
+      &.medium {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 13px;
+      }
+      &.large {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+// Animation
+#map-canvas {
+  .map-circle {
+    transform: scale3d(0, 0, 1);
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-name: pop;
+    animation-delay: 0s;
+    &.active {
+      animation-delay: 0.2s;
+    }
+  }
+}

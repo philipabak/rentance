@@ -1,0 +1,23 @@
+- page_title = 'Bad Request'
+= admin_page_title page_title
+
+#content-header
+  h1 = page_title
+#content-container
+  .error-container
+    .error-code 400
+    .error-details
+      h4 There was a problem serving the requested page.
+      br
+      p
+        strong What should I do:
+      ul.icons-list
+        li
+          i.icon-li.fa.fa-check-square-o>
+          | You can try refreshing the page, the problem may be temporary
+        li
+          i.icon-li.fa.fa-check-square-o>
+          | If you entered the url by hand, double check that it is correct
+        li
+          i.icon-li.fa.fa-check-square-o>
+          | Nothing! We've been notified of the problem and will do our best to make sure it doesn't happen again!

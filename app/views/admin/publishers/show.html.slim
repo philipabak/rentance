@@ -1,0 +1,20 @@
+- page_title = resource.resource_name
+= admin_page_title page_title
+
+#content-header
+  h1 = controller_name.titlecase
+#content-container
+  .portlet
+    .portlet-header
+      h3
+        i class="fa #{resource.class.icon}"
+        = page_title
+      ul.portlet-tools.pull-right
+        li = admin_button :edit, edit_admin_publisher_url(resource.id), {}, :small
+    .portlet-content
+      .row
+        .col-md-6
+          p
+            b Publisher Name:
+            br
+            = resource.name

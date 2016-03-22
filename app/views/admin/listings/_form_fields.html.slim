@@ -1,0 +1,50 @@
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Description
+      .panel-body
+        .form-group
+          = f.label :title, 'Listing Title', class: 'col-md-3 control-label'
+          .col-md-8
+            = f.text_field :title, class: 'form-control'
+        .form-group
+          = f.label :description, 'Description', class: 'col-md-3 control-label'
+          .col-md-8
+            = f.text_area :description, class: 'form-control summernote', rows: 5
+          = admin_tooltip_hint 'Listing description that will be visible to site visitors'
+
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Publisher
+      .panel-body
+        .form-group
+          = f.label :publisher_id, 'Publisher', class: 'col-md-3 control-label'
+          .col-md-9
+            - if resource.publisher
+              p.form-control-static = resource.publisher.name
+              = f.hidden_field :publisher_id
+            - else
+              = f.collection_select :publisher_id, Publisher.all, :id, :name, {prompt: true}, {class: 'form-control ui-selectize'}
+        .form-group
+          = f.label :published_at, 'Date', class: 'col-md-3 control-label'
+          .col-md-8
+            = f.text_field :published_at, class: 'form-control'
+          = admin_tooltip_hint 'Date when this listing posting was published'
+
+.row
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Address
+      .panel-body
+        = render 'admin/address/form_fields', f: f
+
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Geolocation
+      .panel-body
+        = render 'admin/geolocation/form_fields', f: f

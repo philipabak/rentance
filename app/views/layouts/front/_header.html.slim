@@ -1,0 +1,20 @@
+header.navbar-fixed-top
+  nav.navbar.top-nav role="navigation"
+    .navbar-header
+      a.logo href="/"
+        = image_tag 'front/logo-rentance.png', class: 'img-responsive', alt: 'Rentance'
+      .navbar-toggle.collapsed data-target="#navbar-collapse" data-toggle="collapse"
+      .search-collapse.visible-xs.collapsed data-target="#search-filters" data-toggle="collapse"
+        i.icon-search
+    #navbar-collapse.collapse.navbar-collapse
+      ul.header-menu
+        li
+          a href="#0" List Your Space
+        li
+          a href="#" Sign in
+        li
+          a href="#" Register
+    - unless controller_name == 'listings' && action_name == 'search'
+      = render 'layouts/front/filters'
+    a.header-phone.hidden-xs href="tel:8887201290"
+      | (888) 720-1290

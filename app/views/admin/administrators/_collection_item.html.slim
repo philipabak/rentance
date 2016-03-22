@@ -1,0 +1,8 @@
+tr data-resource-id=resource.id
+  td = link_to resource.name, admin_administrator_url(resource.id)
+  td = resource.last_login_at
+  td
+    span.label.label-success Active
+  td.hidden-xs.hidden-sm
+    => admin_button :edit, edit_admin_administrator_url(resource.id), remote: true
+    = admin_button :delete, delete_admin_administrator_url(resource.id), remote: true

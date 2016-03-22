@@ -1,0 +1,18 @@
+#sidebar-wrapper.collapse.sidebar-collapse
+  #search
+    - if current_administrator
+      form
+        input.form-control.input-sm name='search' placeholder='Search...' type='text'
+        button#search-btn.btn type='submit'
+          i.fa.fa-search
+  - if current_administrator
+    nav#sidebar
+      ul#main-nav.open-active
+        = admin_nav_link 'Dashboard', admin_root_url, 'fa-dashboard'
+        = admin_nav_link 'Listings', admin_listings_url, Listing.icon
+        = admin_nav_link 'Publishers', admin_publishers_url, Publisher.icon
+        = admin_nav_link 'Administrators', admin_administrators_url, Administrator.icon
+        li
+          a href='/resque'
+            i.fa.fa-life-ring
+            | Resque

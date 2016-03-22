@@ -1,0 +1,22 @@
+doctype html
+html.no-js
+  head
+    title = content_for?(:title) ? content_for(:title) : 'Rentance Admin panel'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+    = render 'layouts/favicon'
+    = stylesheet_link_tag 'admin/application', media: 'all'
+    = render 'layouts/ga_tracker'
+    script src='https://maps.google.com/maps/api/js?libraries=geometry'
+    = javascript_include_tag 'admin/application'
+    = csrf_meta_tags
+  body
+    #wrapper
+      = render 'layouts/admin/header'
+      = render 'layouts/admin/navbar'
+      = render 'layouts/admin/sidebar'
+      #content
+        #flash
+          = render 'layouts/admin/flash_message'
+        = yield
+      #myModal.modal.fade
+      = render 'layouts/admin/footer'

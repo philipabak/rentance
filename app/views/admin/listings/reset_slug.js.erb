@@ -1,0 +1,4 @@
+$('#myModal').modal('hide');
+$('<%= escape_javascript(render('layouts/admin/flash_message')) %>').appendTo('#flash').hide().fadeIn().delay(3000).fadeOut();
+
+$('#slug').fadeOut(400, function() { $(this).text('<%= resource.slug %>').fadeIn(); });

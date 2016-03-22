@@ -1,0 +1,37 @@
+= f.fields_for :address do |ff|
+  - unless resource.address.new_record?
+    = ff.hidden_field :id
+  .form-group
+    = ff.label :house_number, 'House #', class: 'col-md-4 control-label'
+    .col-md-8
+      = ff.text_field :house_number, class: 'form-control', id: 'address_house_number'
+  .form-group
+    = ff.label :street_name, 'Street', class: 'col-md-4 control-label'
+    .col-md-8
+      = ff.text_field :street_name, class: 'form-control', id: 'address_street_name'
+  .form-group
+    = ff.label :line_2, 'Line 2', class: 'col-md-4 control-label'
+    .col-md-8
+      = ff.text_field :line_2, class: 'form-control', id: 'address_line_2'
+  .form-group
+    = ff.label :city, 'City', class: 'col-md-4 control-label'
+    .col-md-8
+      = ff.text_field :city, class: 'form-control', id: 'address_city'
+  .form-group
+    = ff.label :postal_code, 'Zip / Postal Code', class: 'col-md-4 control-label'
+    .col-md-8
+      = ff.text_field :postal_code, class: 'form-control', id: 'address_postal_code'
+  .form-group
+    - c = Carmen::Country.coded(resource.address.country)
+    - if c && c.subregions?
+      = ff.label :province, c.subregions.first.type.titlecase, class: 'col-md-4 control-label', id: 'province_label'
+      .col-md-8
+        = ff.subregion_select :province, resource.address.country, {prompt: "Please select a #{c.subregions.first.type}", selected: resource.address.province}, class: 'form-control', id: 'address_province'
+    - else
+      = ff.label :province, 'State / Province', class: 'col-md-4 control-label', id: 'province_label'
+      .col-md-8
+        = ff.text_field :province, class: 'form-control', id: 'address_province'
+  .form-group
+    = ff.label :country, 'Country', class: 'col-md-4 control-label'
+    .col-md-8
+      = ff.country_select :country, {priority: %w(CA US), prompt: 'Please select a country', selected: resource.address.country}, class: 'form-control', id: 'address_country'

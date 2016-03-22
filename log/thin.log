@@ -1,0 +1,21 @@
+Writing PID to tmp/pids/thin.pid
+Using rack adapter
+Thin web server (v1.6.4 codename Gob Bluth)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop
+Exiting!
+/usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/lib/thin/backends/tcp_server.rb:16:in `connect': cannot load such file -- thin/connection (LoadError)
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/lib/thin/backends/base.rb:63:in `block in start'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/eventmachine-1.0.8/lib/eventmachine.rb:193:in `call'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/eventmachine-1.0.8/lib/eventmachine.rb:193:in `run_machine'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/eventmachine-1.0.8/lib/eventmachine.rb:193:in `run'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/lib/thin/backends/base.rb:73:in `start'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/lib/thin/server.rb:162:in `start'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/lib/thin/controllers/controller.rb:87:in `start'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/lib/thin/runner.rb:200:in `run_command'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/lib/thin/runner.rb:156:in `run!'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/gems/thin-1.6.4/bin/thin:6:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/bin/thin:23:in `load'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/bin/thin:23:in `<main>'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/bin/ruby_executable_hooks:15:in `eval'
+	from /usr/local/rvm/gems/ruby-2.2.3@rentance/bin/ruby_executable_hooks:15:in `<main>'

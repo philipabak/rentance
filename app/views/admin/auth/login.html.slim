@@ -1,0 +1,20 @@
+#logo
+  a href=admin_root_url = image_tag 'admin/logo-login.png', alt: 'Rentance Admin'
+#login
+  h3 Welcome to Rentance Admin
+  h5 Please sign in to get access
+  = form_tag({}, {id: 'login-form'}) do
+    = render 'layouts/admin/flash_message'
+    .form-group
+      = label_tag :name, 'Username'
+      = text_field_tag :name, params[:name], class: 'form-control', autofocus: '', placeholder: 'Username', required: ''
+    .form-group
+      = label_tag :password, 'Password'
+      = password_field_tag :password, params[:password], class: 'form-control', placeholder: 'Password', required: ''
+    .form-group
+      = button_tag type: 'submit', id: 'login-btn', class: 'btn btn-primary btn-block' do
+        | Signin
+        i.fa.fa-play-circle
+
+  /! %a.btn.btn-default{href: 'javascript:;'} Forgot Password?
+/! %a#signup-btn.btn.btn-lg.btn-block{href: 'javascript:;'} Create an Account

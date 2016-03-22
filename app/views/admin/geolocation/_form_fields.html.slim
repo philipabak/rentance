@@ -1,0 +1,8 @@
+= f.fields_for :geolocation do |ff|
+  - unless resource.geolocation.new_record?
+    = ff.hidden_field :id
+
+  = ff.hidden_field :latitude, id: 'geolocation_latitude'
+  = ff.hidden_field :longitude, id: 'geolocation_longitude'
+  #map data={'marker-icon' => image_path('admin/map-marker.png')} style='width:100%; height:400px'
+  .text-center If the map marker is inaccurate, simply drag it to the right location.
